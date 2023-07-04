@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "862029357572",
+    "project_id": "ottmate-7cade",
+    "storage_bucket": "ottmate-7cade.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:862029357572:android:b4da3b16f56c33ca838b51",
+        "android_client_info": {
+          "package_name": "com.example.ottmate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "862029357572-enn3mu2rqch4aplgr5ribroq9qk1bq2t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0gIbKBP6OvyuWqBqDhFtspaKjcCGiiPc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "862029357572-6qvvujpc0hludnoo75cq98pkn0bj5t3q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

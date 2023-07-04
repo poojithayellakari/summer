@@ -1,11 +1,15 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:ottmate/loginpage.dart';
+import 'package:ottmate/profilepage.dart';
 
 import 'homepage.dart';
 import 'ottpage.dart';
 
-void main() {
-  runApp(const MyApp());
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -28,7 +32,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
+      home: LoginScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
