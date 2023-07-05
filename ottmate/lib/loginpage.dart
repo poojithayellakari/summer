@@ -1,6 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:ottmate/controllers/auth/authentication.controller.dart';
 import 'package:ottmate/ottpage.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -14,22 +16,14 @@ class LoginScreen extends StatelessWidget {
           child: Padding(
         padding: const EdgeInsets.only(top: 30),
         child: Column(children: [
-          Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                border: Border.all(color: Color.fromARGB(255, 240, 235, 235))),
-            padding: EdgeInsets.all(16),
-            margin: EdgeInsets.all(8),
-            width: 800,
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [Icon(Icons.clear)]),
+          SizedBox(
+            height: 70,
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: const [
                 CircleAvatar(
                   radius: 85,
                   backgroundImage: AssetImage('assets/myimage.jpg'),
@@ -38,7 +32,7 @@ class LoginScreen extends StatelessWidget {
             ),
           ),
           Column(
-            children: [
+            children: const [
               Padding(
                 padding: const EdgeInsets.fromLTRB(8, 10, 8, 8),
                 child: Text("Enter your Phone Number",
@@ -111,84 +105,30 @@ class LoginScreen extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        "GENERATE OTP",
+                        "Generate OTP",
                         textAlign: TextAlign.center,
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                     ))),
           ),
-          Container(height: 30),
-          Padding(
-            padding: const EdgeInsets.only(top: 50),
+          const Padding(
+            padding: EdgeInsets.only(top: 30, bottom: 10),
             child: Text("-------------------Sign in using------------------",
-                style: TextStyle(fontSize: 16)),
+                style: TextStyle(fontSize: 16, color: Colors.grey)),
           ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(5, 15, 5, 5),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                InkWell(
-                    onTap: () {},
-                    child: Container(
-                      padding: EdgeInsets.all(5),
-                      width: 100,
-                      height: 30,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5.0),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Color.fromARGB(255, 214, 209, 209)
-                                  .withOpacity(0.5),
-                              spreadRadius: 2,
-                              blurRadius: 5,
-                              offset: Offset(0, 2),
-                            )
-                          ]),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          CircleAvatar(
-                            radius: 10,
-                            backgroundColor: Colors.white,
-                            backgroundImage: AssetImage('assets/search.png'),
-                          ),
-                          Text("Google")
-                        ],
-                      ),
-                    )),
-                InkWell(
-                    onTap: () {},
-                    child: Container(
-                      padding: EdgeInsets.all(5),
-                      width: 100,
-                      height: 30,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5.0),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Color.fromARGB(255, 214, 209, 209)
-                                  .withOpacity(0.5),
-                              spreadRadius: 2,
-                              blurRadius: 5,
-                              offset: Offset(0, 2),
-                            )
-                          ]),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          CircleAvatar(
-                            radius: 10,
-                            backgroundColor: Colors.white,
-                            backgroundImage: AssetImage('assets/face.png'),
-                          ),
-                          Text("Facebook")
-                        ],
-                      ),
-                    ))
-              ],
-            ),
+          SignInButton(
+            Buttons.Google,
+            onPressed: () {
+              AuthenticationController().googleSignIn();
+            },
           ),
+          SizedBox(
+            height: 10,
+          ),
+          SignInButton(
+            Buttons.Facebook,
+            onPressed: () {},
+          )
         ]),
       )),
     );
