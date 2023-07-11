@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:ottmate/controllers/auth/authentication.controller.dart';
-import 'package:ottmate/ottpage.dart';
+import 'package:ottmate/otpPage.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});

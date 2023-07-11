@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
-import 'package:ottmate/loginpage.dart';
+import 'package:ottmate/views/auth/loginpage.dart';
 
 class OttScreen extends StatelessWidget {
   const OttScreen({super.key});
@@ -21,27 +21,27 @@ class OttScreen extends StatelessWidget {
           width: 800,
           child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: [Icon(Icons.clear)]),
+              children: const [Icon(Icons.clear)]),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: const [
             CircleAvatar(
               radius: 70,
               backgroundImage: AssetImage('assets/myimage.jpg'),
             )
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
+        const Padding(
+          padding: EdgeInsets.all(8.0),
           child: Text("OTP Verification",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Enter the OTP sent to "),
-            Text("+919390703515"),
+            const Text("Enter the OTP sent to "),
+            const Text("+919390703515"),
             InkWell(
                 onTap: () {
                   Navigator.push(
@@ -67,9 +67,7 @@ class OttScreen extends StatelessWidget {
           children: [
             Text("Didn't receive Otp? "),
             InkWell(
-                onTap: () {
-                  
-                },
+                onTap: () {},
                 child: Text(
                   "RESEND",
                   style: TextStyle(color: Colors.red),

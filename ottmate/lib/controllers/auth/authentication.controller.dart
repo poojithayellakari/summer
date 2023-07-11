@@ -4,7 +4,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:ottmate/homepage.dart';
-import 'package:ottmate/loginpage.dart';
+import 'package:ottmate/views/auth/loginpage.dart';
 
 class AuthenticationController {
   /// Google signin takes no arguments
