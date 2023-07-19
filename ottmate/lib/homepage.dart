@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ott {
   String imageUrl = '';
@@ -79,16 +80,17 @@ class HomeScreen extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  border: Border.all(color: Color.fromARGB(255, 240, 235, 235)),
+                  border: Border.all(
+                      color: const Color.fromARGB(255, 240, 235, 235)),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
+                    children: const [
                       Text(
                         "Explore",
-                        style: TextStyle(fontSize: 23),
+                        style: TextStyle(fontSize: 18),
                       ),
                       CircleAvatar(
                           backgroundColor: Color.fromARGB(255, 102, 87, 185),
@@ -106,9 +108,11 @@ class HomeScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
+                height: 49,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: Color.fromARGB(31, 37, 34, 34))),
+                    border: Border.all(
+                        color: const Color.fromARGB(31, 37, 34, 34))),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextField(
@@ -117,7 +121,7 @@ class HomeScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10)),
                       labelText: "Search",
                       suffixIcon: InkWell(
-                        child: Icon(Icons.search),
+                        child: const Icon(Icons.search),
                         onTap: () {},
                       ),
                       suffixIconColor: Colors.blue,
@@ -130,31 +134,43 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(14, 2, 5, 5),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
-                children: [
+                children: const [
                   Text(
-                    "Favourite Brands",
-                    style: TextStyle(color: Colors.black, fontSize: 22),
+                    "Favourite OTT's",
+                    style: TextStyle(color: Colors.black, fontSize: 18),
                   ),
                 ],
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Container(
+              child: SizedBox(
                 height: 100,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
                   itemCount: otts.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return Column(children: [
-                      CircleAvatar(
-                        radius: 30,
-                        backgroundImage: AssetImage(otts[index].imageUrl),
-                        backgroundColor: Colors.white,
+                    return InkWell(
+                      onTap: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 4),
+                        child: Column(children: [
+                          CircleAvatar(
+                            radius: 30,
+                            backgroundImage: AssetImage(otts[index].imageUrl),
+                            backgroundColor: Colors.white,
+                          ),
+                          const SizedBox(
+                            height: 2,
+                          ),
+                          Text(
+                            otts[index].title,
+                            style: const TextStyle(fontSize: 13),
+                          ),
+                        ]),
                       ),
-                      Text(otts[index].title),
-                    ]);
+                    );
                   },
                 ),
               ),
@@ -163,79 +179,77 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(14, 2, 5, 14),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children: const [
                   Text(
-                    "Public Groups",
-                    style: TextStyle(color: Colors.black, fontSize: 22),
-                  ),
-                  InkWell(
-                    child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(3),
-                          color: Colors.blue,
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text("See More"),
-                        )),
-                    onTap: () {},
+                    "Available Premiums",
+                    style: TextStyle(color: Colors.black, fontSize: 18),
                   ),
                 ],
               ),
             ),
             ListView.builder(
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemCount: premium.length,
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
-                    height: 100,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
-                      border:
-                          Border.all(color: Color.fromARGB(255, 240, 235, 235)),
+                      border: Border.all(
+                          color: const Color.fromARGB(255, 240, 235, 235)),
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        CircleAvatar(
-                          backgroundImage: AssetImage('assets/netflix.jpg'),
-                          backgroundColor: Colors.blue,
-                          radius: 10,
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Text(premium[index].type),
-                            Text("by " + premium[index].name),
-                            Text(premium[index].sharing.toString() +
-                                " / " +
-                                premium[index].total.toString() +
-                                " Friends")
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Text('\u{20B9}${premium[index].amount}' +
-                                '/user/' +
-                                premium[index].duration.toString() +
-                                "months"),
-                            InkWell(
-                              child: Container(
-                                  decoration: BoxDecoration(
-                                      color: Color.fromARGB(255, 33, 65, 243)),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text("Join"),
-                                  )),
-                              onTap: () {},
-                            )
-                          ],
-                        )
-                      ],
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          const SizedBox(
+                            width: 40,
+                            child: const CircleAvatar(
+                              backgroundImage: AssetImage('assets/netflix.jpg'),
+                              backgroundColor: Colors.blue,
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 15,
+                          ),
+                          Container(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Text(
+                                  premium[index].type,
+                                  style: const TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  "by ${premium[index].name}",
+                                  style: const TextStyle(
+                                      fontSize: 13, color: Colors.grey),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  "20\u{20B9}/mon",
+                                  style: TextStyle(
+                                      color:
+                                          Color.fromARGB(255, 138, 138, 138)),
+                                )
+                              ],
+                            ),
+                          ),
+                          const Spacer(),
+                          Icon(Icons.arrow_forward)
+                        ],
+                      ),
                     ),
                   ),
                 );

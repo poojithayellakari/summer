@@ -1,4 +1,4 @@
-package com.example.ottmate
+package com.vamsidhar.ottmate
 
 import io.flutter.embedding.android.FlutterActivity
 
