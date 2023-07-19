@@ -49,10 +49,10 @@ class ProfileScreen extends StatelessWidget {
               },
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(12,2,12,0),
+              padding: const EdgeInsets.fromLTRB(12, 2, 12, 0),
               child: Container(
-                width:350,
-                height:160,
+                width: 350,
+                height: 160,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
                   border: Border.all(color: Color.fromARGB(255, 240, 235, 235)),
@@ -114,11 +114,11 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
             ),
-             Padding(
-              padding: const EdgeInsets.fromLTRB(12,2,12, 2),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(12, 2, 12, 2),
               child: Container(
-                width:350,
-                height:118,
+                width: 350,
+                height: 118,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
                   border: Border.all(color: Color.fromARGB(255, 240, 235, 235)),
@@ -158,7 +158,12 @@ class ProfileScreen extends StatelessWidget {
                           ),
                           Icon(Icons.arrow_forward_ios_rounded, size: 20)
                         ],
-                      ),],),),),),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
